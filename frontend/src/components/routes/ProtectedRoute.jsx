@@ -10,7 +10,6 @@ export const ProtectedRoute = ({ children, allowedRole }) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Redirection si le role ne correspond pas
   if (allowedRole && user.role !== allowedRole) {
     return <Navigate to={user.role === 'admin' ? '/admin' : '/student'} replace />;
   }
